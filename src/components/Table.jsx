@@ -1,6 +1,8 @@
 import Link from 'next/link';
 
  const Table = ({ data }) => {
+
+    console.log("data from table component: " + data);
     return (
         <table>
             <tbody>
@@ -11,14 +13,14 @@ import Link from 'next/link';
                     <th>Country</th>
                     <th>State</th>
                 </tr>
-                {data.map((city) => (
+                {data?.map((city) => (
                     
                     <tr key={city}> 
-                        <Link href={{
+                        
+                        <td> <Link href={{
                             pathname: `/city/${city.name}`,
-                            query: {latitude: city.latitude, longitude: city.longitude}}}> 
-                        <td>{city.name}</td>
-                        </Link>
+                            query: {latitude: city.latitude, longitude: city.longitude}}}>{city.name}</Link></td>
+                       
                         <td>{city.latitude}</td>
                         <td>{city.longitude}</td>
                         <td>{city.country}</td>

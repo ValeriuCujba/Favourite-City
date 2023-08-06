@@ -6,6 +6,9 @@ body {
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 1rem;
@@ -41,4 +44,27 @@ body {
 
 .links a:hover {
   text-decoration: underline;
+}
+
+/* City Page */
+
+.city-header {
+  text-align: center;
+}
+
+/* Favourite Star*/
+
+.star {
+  visibility:hidden;
+  font-size:30px;
+  cursor:pointer;
+}
+.star:before {
+ content: "\2606";
+ position: absolute;
+ visibility:visible;
+}
+.star:checked:before {
+ content: "\2605";
+ position: absolute;
 }

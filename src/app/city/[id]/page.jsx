@@ -1,3 +1,4 @@
+import FavouriteStar from "@/components/FavouriteStar";
 
 const CityPage = async ({ params, searchParams }) => {
 
@@ -21,10 +22,15 @@ const CityPage = async ({ params, searchParams }) => {
   };
 
 
-  const data = await getCityWeather(); 
+  const data = await getCityWeather();
 
   return (<>
-    <h1>{name}</h1>
+
+    <h1 className="city-heading">{name}</h1>
+    <FavouriteStar
+      name={name}
+      latitude={latitude}
+      longitude={longitude} />
     <h3>Latitude: {data.latitude}</h3>
     <h3>Longitude: {data.longitude}</h3>
     <h3>Temperature: {data.current_weather.temperature} &deg;C </h3>
